@@ -1,10 +1,10 @@
 import React from 'react'
 
-function TodoItem(){
+function TodoItem({text, completed}){
     return(
       <li>
         <span>V</span>
-        <p>Aprender React y luego React Native</p>
+        <p>{text}</p>
         <span>X</span>
       </li>
     );
