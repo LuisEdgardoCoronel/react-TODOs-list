@@ -2,7 +2,7 @@ import React from 'react'
 
 function TodoBtnCreate() {
   return (
-    <div>TodoBtnCreate</div>
+    <button type="">New</button>
   )
 }
 

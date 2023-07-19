@@ -3,7 +3,7 @@ import TodoTitle from './TodoTitle';
 import TodoSearch from './TodoSearch';
 import TodoList from './TodoList';
 import TodoItem from './TodoItem';
-//import TodoBtnCreate from './TodoBtnCreate';
+import TodoBtnCreate from './TodoBtnCreate';
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <TodoItem/>
       </TodoList>
 
-      {/* <TodoBtnCreate/> */}
+      <TodoBtnCreate/>
     </div>
   );
 }
