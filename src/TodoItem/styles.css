@@ -9,10 +9,9 @@ li{
 
 li span{
     cursor: pointer;
-    background-color: darkgrey;
     border-radius: 10px;
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,8 +21,7 @@ li span{
 
 
 li span:hover{
-    scale: 1.3;
-    background-color: rgb(255, 255, 255);
+    scale: 1.4;
 }
 
 .active{
@@ -38,10 +36,9 @@ li span:hover{
     text-decoration: line-through;
 }
 
-li span:first-child:hover{
-    color: green;
-}
 
-li span:last-child:hover{
-    color: rgb(199, 0, 0);
+
+.span-icons{
+    width: 100%;
+    height: 100%;
 }
