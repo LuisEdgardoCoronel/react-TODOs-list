@@ -3,7 +3,10 @@ import './styles.css'
 
 function TodoBtnCreate() {
   return (
-    <button className='button' type="">New</button>
+    <button className='button' onClick={(event)=>{
+      console.log("hiciste click")
+      console.log(event);
+    }}>New</button>
   )
 }
 
