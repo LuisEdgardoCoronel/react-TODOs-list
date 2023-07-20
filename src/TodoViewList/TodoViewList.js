@@ -14,7 +14,7 @@ const defaulTodos =[
   ];
 
 
-
+//TODO:agregar y crear un modal
 
 function TodoViewList() {
   return (

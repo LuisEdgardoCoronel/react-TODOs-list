@@ -4,6 +4,9 @@ import TodoSearch from '../TodoSearch/TodoSearch'
 import TodoBtnCreate from '../TodoBtnCreate/TodoBtnCreate'
 import icontodo from '../img/icon.svg'
 
+
+//TODO: la parte superior agregarla en un modal
+
 function TodoCreateDesktop() {
   return (
     <div className='container-desktop'>
