@@ -6,12 +6,14 @@ function TodoInput({placeholder, inputState, setInputState}) {
   
 
   return (
-    <input className='input' 
-    placeholder={placeholder}
-    value={inputState}
-    onChange={(event)=>{
-      setInputState(event.target.value);
-    }}/>
+    <div className='container-input'>
+      <input className='input' 
+      placeholder={placeholder}
+      value={inputState}
+      onChange={(event)=>{
+        setInputState(event.target.value);
+      }}/>
+    </div>
   );
 }
 
