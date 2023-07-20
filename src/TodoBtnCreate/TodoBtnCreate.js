@@ -1,8 +1,9 @@
 import React from 'react'
+import './styles.css'
 
 function TodoBtnCreate() {
   return (
-    <button type="">New</button>
+    <button className='button' type="">New</button>
   )
 }
 

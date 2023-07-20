@@ -1,10 +1,9 @@
 import React from 'react'
+import './TodoTitle.css'
 
 function TodoTitle({total, completed}) {
   return (
-    <h1 style={{
-        fontSize: '24px',
-    }}>
+    <h1>
         Has completado {completed} de {total} TODOs
     </h1>
   );
