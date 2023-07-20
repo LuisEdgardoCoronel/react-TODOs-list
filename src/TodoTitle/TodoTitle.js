@@ -1,10 +1,10 @@
 import React from 'react'
 import './TodoTitle.css'
-//TODO: agregar span en los props con clases para otro color
+
 function TodoTitle({total, completed}) {
   return (
     <h1>
-        Has completado {completed} de {total} TODOs
+        {completed !== 0?`Has completado ${completed} de ${total} TODOs`:"No tienes TODOs pendientes"}
     </h1>
   );
 }
