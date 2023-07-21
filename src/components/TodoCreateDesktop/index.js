@@ -1,8 +1,8 @@
 import React from 'react'
 import './styles.css'
 import TodoSearch from '../TodoInput'
-import TodoBtnCreate from '../TodoBtnCreate/TodoBtnCreate'
-import icontodo from '../img/icon.svg'
+import TodoBtnCreate from '../TodoBtnCreate'
+import icontodo from '../../img/icon.svg'
 
 
 //TODO: la parte superior agregarla en un modal
