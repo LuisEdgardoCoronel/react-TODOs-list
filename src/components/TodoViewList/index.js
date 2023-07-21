@@ -1,11 +1,11 @@
 import React from 'react'
 import './style.css'
-import TodoBtnCreate from '../TodoBtnCreate/TodoBtnCreate'
+import TodoBtnCreate from '../components/TodoBtnCreate/TodoBtnCreate'
 import TodoTitle from '../TodoTitle'
 import TodoInput from '../TodoInput'
 import TodoList from '../TodoList'
 import TodoItem from '../TodoItem'
-import useLocalStorage from '../utils/useLocalStorage'
+import useLocalStorage from '../../utils/useLocalStorage'
 
 // const defaulTodos =[
 //     {text: 'Aprender React', completed: true},
