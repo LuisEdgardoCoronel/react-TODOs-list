@@ -15,26 +15,43 @@ import TodoItem from '../TodoItem/TodoItem'
 
 
 //TODO:agregar modal
-
-function TodoViewList() {
-  let parsedTodos;
-  const localStorageTodos = localStorage.getItem('TODOS_v1');//TODO: evitar ingresar al localStorage desde el componente, usar un usestate
-  if (!localStorageTodos) {
-    localStorage.setItem('TODOS_v1', JSON.stringify([]));
-    parsedTodos = []
+//customs hooks
+function useLocalStorage(itemName, initialValue){
+  let parsedItem;
+  
+  const localStorageItems = localStorage.getItem(itemName);
+  if (!localStorageItems) {
+    localStorage.setItem(itemName, JSON.stringify(initialValue));
+    parsedItem = initialValue;
   }else{
-    parsedTodos = JSON.parse(localStorageTodos);
+    parsedItem = JSON.parse(localStorageItems);
+  }
+  
+  const [items, setItems] = React.useState();
+
+  const saveItem = (newItems) => {// modifica el localStorage y el estado
+    localStorage.setItem(itemName, JSON.stringify(newItems))
+    setItems(newItems)
   }
 
+  return [items, saveItem]
+}
 
-  const [todos, setTodos] = React.useState(parsedTodos);//contiene todos los todos
+
+
+
+
+
+
+function TodoViewList() {
+  const [todos, saveTodos] = useLocalStorage('TODOS_v1',[]);//contiene todos los todos
   const [inputState, setInputState] = React.useState('');//constiene el texto de los inputs
 
 
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
 
-  const searchedTodos = todos.filter(
+    const searchedTodos = todos.filter(
     (todo) => {
       const todoText = todo.text.toLowerCase();
       const searchText = inputState.toLowerCase();
@@ -42,11 +59,6 @@ function TodoViewList() {
     }
   );
 
-
-  const saveTodos = (newTodos) => {// modifica el localStorage y el estado
-    localStorage.setItem('TODOS_v1', JSON.stringify(newTodos))
-    setTodos(newTodos)
-  }
 
 
   const completeTodo = (text) =>{//actualizador de todos a true
