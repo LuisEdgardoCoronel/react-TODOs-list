@@ -43,12 +43,12 @@ function TodoViewList() {
   };
 
 
-  const deleteTodo = (text) =>{//actualizador de todos a false
+  const deleteTodo = (text) =>{//borrar todos
     const newTodos = [...todos]
     const todoIndex = newTodos.findIndex(
       (todo)=> todo.text === text
     );
-    newTodos[todoIndex].completed = false//para borrar usar: newTodos.splice(todoIndex,1);
+    newTodos.splice(todoIndex,1);
     setTodos(newTodos)
   };
 
