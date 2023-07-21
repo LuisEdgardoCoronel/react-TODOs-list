@@ -1,6 +1,6 @@
 import React from 'react'
 import './styles.css'
-import TodoSearch from '../TodoInput/TodoInput'
+import TodoSearch from '../TodoInput'
 import TodoBtnCreate from '../TodoBtnCreate/TodoBtnCreate'
 import icontodo from '../img/icon.svg'
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import './style.css'
 import TodoBtnCreate from '../TodoBtnCreate/TodoBtnCreate'
-import TodoTitle from '../TodoTitle/TodoTitle'
-import TodoInput from '../TodoInput/TodoInput'
-import TodoList from '../TodoList/TodoList'
-import TodoItem from '../TodoItem/TodoItem'
+import TodoTitle from '../TodoTitle'
+import TodoInput from '../TodoInput'
+import TodoList from '../TodoList'
+import TodoItem from '../TodoItem'
 
 // const defaulTodos =[
 //     {text: 'Aprender React', completed: true},

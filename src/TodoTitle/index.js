@@ -1,5 +1,5 @@
 import React from 'react'
-import './TodoTitle.css'
+import './styles.css'
 
 function TodoTitle({total, completed}) {
   return (

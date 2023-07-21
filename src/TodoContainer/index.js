@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.css'
-import TodoViewList from '../TodoViewList/TodoViewList'
-import TodoCreateDesktop from '../TodoCreateDesktop/TodoCreateDesktop'
+import TodoViewList from '../TodoViewList'
+import TodoCreateDesktop from '../TodoCreateDesktop'
 
 function TodoContainer() {
   return (
