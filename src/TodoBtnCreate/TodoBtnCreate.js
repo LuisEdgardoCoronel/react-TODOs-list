@@ -1,11 +1,11 @@
 import React from 'react'
 import './styles.css'
 
-function TodoBtnCreate() {
+function TodoBtnCreate({text}) {
   return (
-    <button className='button' onClick={(event)=>{
-      console.log("hiciste click")
-      console.log(event);
+    <button 
+    className='button' 
+    onClick={()=>{
     }}>New</button>
   )
 }
