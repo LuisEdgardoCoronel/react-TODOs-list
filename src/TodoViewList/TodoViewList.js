@@ -6,18 +6,28 @@ import TodoInput from '../TodoInput/TodoInput'
 import TodoList from '../TodoList/TodoList'
 import TodoItem from '../TodoItem/TodoItem'
 
-const defaulTodos =[
-    {text: 'Aprender React', completed: true},
-    {text: 'Conocer librerias', completed: false},
-    {text: 'Crear Proyectos', completed: false},
-    {text:'Aprender React Native', completed: false}
-  ];
+// const defaulTodos =[
+//     {text: 'Aprender React', completed: true},
+//     {text: 'Conocer librerias', completed: false},
+//     {text: 'Crear Proyectos', completed: false},
+//     {text:'Aprender React Native', completed: false}
+//   ];
 
 
-//TODO:agregar y crear un modal
+//TODO:agregar modal
 
 function TodoViewList() {
-  const [todos, setTodos] = React.useState(defaulTodos);//contiene todos los todos
+  let parsedTodos;
+  const localStorageTodos = localStorage.getItem('TODOS_v1');//TODO: evitar ingresar al localStorage desde el componente, usar un usestate
+  if (!localStorageTodos) {
+    localStorage.setItem('TODOS_v1', JSON.stringify([]));
+    parsedTodos = []
+  }else{
+    parsedTodos = JSON.parse(localStorageTodos);
+  }
+
+
+  const [todos, setTodos] = React.useState(parsedTodos);//contiene todos los todos
   const [inputState, setInputState] = React.useState('');//constiene el texto de los inputs
 
 
@@ -33,13 +43,19 @@ function TodoViewList() {
   );
 
 
+  const saveTodos = (newTodos) => {// modifica el localStorage y el estado
+    localStorage.setItem('TODOS_v1', JSON.stringify(newTodos))
+    setTodos(newTodos)
+  }
+
+
   const completeTodo = (text) =>{//actualizador de todos a true
     const newTodos = [...todos]
     const todoIndex = newTodos.findIndex(
       (todo)=> todo.text === text
     );
     newTodos[todoIndex].completed =true
-    setTodos(newTodos)
+    saveTodos(newTodos)
   };
 
 
@@ -49,7 +65,7 @@ function TodoViewList() {
       (todo)=> todo.text === text
     );
     newTodos.splice(todoIndex,1);
-    setTodos(newTodos)
+    saveTodos(newTodos)
   };
 
   return (
