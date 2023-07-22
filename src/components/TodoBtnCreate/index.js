@@ -6,7 +6,7 @@ function TodoBtnCreate({text}) {
     <button 
     className='button' 
     onClick={()=>{
-    }}>New</button>
+    }}>{text}</button>
   )
 }
 
