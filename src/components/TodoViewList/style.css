@@ -1,5 +1,7 @@
 .view-list-container{
-    width: 600px;
+    min-width: 430px;
+    max-width: 600px;
+    width: 100%;
     background-color: aqua;
     display: flex;
     flex-direction: column;
@@ -17,4 +19,13 @@
 
 .icon-pensando{
     width: 200px;
+}
+
+.view-list-container button{
+    display: none;
+}
+@media screen and (max-width:850px) {
+    .view-list-container button{
+        display: block;
+    }
 }
