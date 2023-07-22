@@ -1,3 +1,13 @@
 .modal-container{
-    
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+    height: 150px;
+    justify-content: space-between;
+}
+
+.disabled{
+    display: none;
 }
