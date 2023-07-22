@@ -5,6 +5,7 @@ import TodoTitle from '../TodoTitle'
 import TodoInput from '../TodoInput'
 import TodoList from '../TodoList'
 import TodoItem from '../TodoItem'
+import TodoModal from '../TodoModal/TodoModal'
 
 
 //TODO:agregar modal
@@ -33,6 +34,9 @@ function TodoViewList({
       completed={completedTodos} 
       total={totalTodos}
       />
+      
+
+      <TodoModal/>
       
       <TodoInput
       placeholder={"Buscar tareas"}
