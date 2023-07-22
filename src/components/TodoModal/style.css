@@ -5,9 +5,15 @@
     padding: 10px;
     text-align: center;
     height: 150px;
+    width: 300px;
     justify-content: space-between;
 }
 
 .disabled{
     display: none;
+}
+
+.enabled{
+    position: absolute;
+    top: 30%;
 }
