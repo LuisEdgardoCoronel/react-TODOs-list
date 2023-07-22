@@ -5,7 +5,7 @@ import TodoBtnCreate from '../TodoBtnCreate'
 
 function TodoModal() {
   return (
-    <div className='modal-container enabled'>
+    <div className='modal-container disabled'>
       <h3>Ingrese una nueva tarea</h3>
       <TodoInput/>
       <TodoBtnCreate 
