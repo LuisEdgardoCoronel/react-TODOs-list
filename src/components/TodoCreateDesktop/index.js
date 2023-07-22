@@ -13,7 +13,7 @@ function TodoCreateDesktop() {
       <h2>Ingrese una nueva tarea</h2>  
       <div className='create-todo'>
         <TodoSearch/>
-        <TodoBtnCreate/>
+        <TodoBtnCreate text={"Crear"}/>
       </div>
       <img src={icontodo} alt="imagen simbolica"/>
     </div>

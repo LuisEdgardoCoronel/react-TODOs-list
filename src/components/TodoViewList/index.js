@@ -56,7 +56,7 @@ function TodoViewList({
       </TodoList>
 
       
-        <TodoBtnCreate/>
+        <TodoBtnCreate text={"Nuevo"}/>
     </div>
   )
 }
