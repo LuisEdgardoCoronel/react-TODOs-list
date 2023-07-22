@@ -6,6 +6,7 @@ import TodoInput from '../TodoInput'
 import TodoList from '../TodoList'
 import TodoItem from '../TodoItem'
 import TodoModal from '../TodoModal/TodoModal'
+import pensando from '../../img/pensando.svg'
 
 
 //TODO:agregar modal
@@ -30,6 +31,8 @@ function TodoViewList({
 
   return (
     <div className='view-list-container'>
+      <img src={pensando} alt="chica pensando" className='icon-pensando'/>
+      
       <TodoTitle 
       completed={completedTodos} 
       total={totalTodos}
