@@ -6,7 +6,12 @@ import {useLocalStorage} from '../../Hooks/useLocalStorage'
 
 function TodoContainer() {
 
-  const [todos, saveTodos] = useLocalStorage('TODOS_v1',[]);//contiene todos los todos
+  const {
+    items:todos, 
+    saveItem:saveTodos, 
+    loading, 
+    error
+  } = useLocalStorage('TODOS_v1',[]);//contiene todos los todos
   const [inputState, setInputState] = React.useState('');//constiene el texto de los inputs
 
 
@@ -57,6 +62,8 @@ function TodoContainer() {
           setInputState={setInputState}
           searchedTodos={searchedTodos}
           deleteTodo={deleteTodo}
+          loading={loading}
+          error={error}
         />
     </div>
   )
