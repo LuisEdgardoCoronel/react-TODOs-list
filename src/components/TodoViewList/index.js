@@ -19,14 +19,18 @@ function TodoViewList() {
     completeTodo,
     deleteTodo,
     loading,
-    error
+    error,
+    openModal,
+    setOpenModal
   } = React.useContext(TodoContext)
 
   return (
     <div className='view-list-container'>
       <img src={pensando} alt="chica pensando" className='icon-pensando'/>
         <TodoTitle/>
-          <TodoModal />
+          {openModal && (<TodoModal>
+            
+          </TodoModal>)}
           <TodoInput  placeholder={"Buscar tareas"}/>
           <TodoList>
             {loading && 
