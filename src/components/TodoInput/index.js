@@ -1,10 +1,12 @@
 import React from 'react'
 import './styles.css'
+import { TodoContext } from '../../context';
 
-function TodoInput({placeholder, inputState, setInputState}) {
-
-  
-
+function TodoInput({placeholder}) {
+  const {
+    inputState,
+    setInputState,
+  } = React.useContext(TodoContext);
   return (
     <div className='container-input'>
       <input className='input' 
