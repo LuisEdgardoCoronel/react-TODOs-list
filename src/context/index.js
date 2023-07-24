@@ -13,7 +13,7 @@ function TodoProvider({children}){
   } = useLocalStorage('TODOS_v1',[]);//contiene todos los todos
 
 
-
+  const[openModal, setOpenModal] = React.useState(true);//contiene el estado del modal
   const [inputState, setInputState] = React.useState('');//contiene el texto de los inputs
 
 
@@ -59,7 +59,9 @@ function TodoProvider({children}){
       completeTodo,
       deleteTodo,
       loading,
-      error
+      error,
+      openModal,
+      setOpenModal
     }}>
       {children}
     </TodoContext.Provider>
