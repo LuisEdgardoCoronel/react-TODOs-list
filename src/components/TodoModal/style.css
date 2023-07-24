@@ -6,14 +6,10 @@
     text-align: center;
     height: 150px;
     width: 300px;
-    justify-content: space-between;
-}
-
-.disabled{
-    display: none;
-}
-
-.enabled{
-    position: absolute;
+    justify-content: space-between; 
+    position: fixed;
     top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
 }
