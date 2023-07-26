@@ -1,26 +1,33 @@
 import React from "react";
 import { useLocalStorage } from "../Hooks/useLocalStorage";
 
-const TodoContext = React.createContext();
 
-function TodoProvider({children}){
+
+const TodoContext = React.createContext();//creamos contexto para todos
+
+
+
+
+function TodoProvider({children}){//inicializamos la funcion que va almacenar todo el contexto
 
   const {
     item, 
     saveItem:saveTodos, 
     loading, 
     error
-  } = useLocalStorage('TODOS_v1',[]);//contiene todos los todos
+  } = useLocalStorage('TODOS_v1',[]);//contiene todos los todos, usamos el localstorage
+
 
 
   const[openModal, setOpenModal] = React.useState(false);//contiene el estado del modal
   const [inputState, setInputState] = React.useState('');//contiene el texto de los inputs
 
 
-  const completedTodos = item.filter(todo => !!todo.completed).length;
-  const totalTodos = item.length;
 
-  const searchedTodos = item.filter(
+  const completedTodos = item.filter(todo => !!todo.completed).length;//cantidad de todos completados
+  const totalTodos = item.length;//cantidad de todos existentes
+
+  const searchedTodos = item.filter(//filtramos los todosItems en el todolist en caso de que escribamos en el input
     (todo) => {
       console.log(todo.text);
       const todoText = todo.text.toLowerCase();
@@ -51,7 +58,7 @@ function TodoProvider({children}){
   };
 
 
-  const addTodo = (text) => {
+  const addTodo = (text) => {//agregar nuevos todos al localstorage
     const newTodos = [...item]
     newTodos.push({
       text,
@@ -60,29 +67,45 @@ function TodoProvider({children}){
     saveTodos(newTodos);
   }
 
-  const modalView = () =>{
+
+
+  const modalView = () =>{//visualizar y esconder el modal
     setOpenModal(!openModal)
   }
 
-  const [newTodoValue, setNewTodoValue] = React.useState('');
+
+
+
+  const [newTodoValue, setNewTodoValue] = React.useState('');//estados que almacenan los textos del textarea
 
   
   
 
-  const onSubmit = (event)=>{
+  const onSubmit = (event)=>{//funcion para el formulario del modal, para guardar los todos y cerrar modal
     event.preventDefault();
     addTodo(newTodoValue)
     setOpenModal(false);
   }
 
-  const onChange = (event)=>{
+
+
+  const onChange = (event)=>{//funcion que actualiza los estados del textarea
     setNewTodoValue(event.target.value)
   }
 
-  const addNewTodo = () =>{
+
+
+
+  const addNewTodo = () =>{//funcion que guarda el todo desde la vista desktop
     addTodo(newTodoValue)
     setNewTodoValue('')
   }
+
+
+
+
+
+
 
   return(
     <TodoContext.Provider value={{
