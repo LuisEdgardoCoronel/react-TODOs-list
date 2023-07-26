@@ -1,12 +1,11 @@
 import React from 'react'
 import './styles.css'
 
-function TodoBtnCreate({text}) {
+function TodoBtnCreate({text, functions}) {
   return (
     <button 
     className='button' 
-    onClick={()=>{
-    }}>{text}</button>
+    onClick={functions}>{text}</button>
   )
 }
 
