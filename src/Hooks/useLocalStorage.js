@@ -2,8 +2,7 @@ import React from 'react'
 
 
 function useLocalStorage(itemName, initialValue){
-  const [items, setItem] = React.useState(initialValue);
-
+  const [item, setItem] = React.useState(initialValue);
   const[loading, setLoading] = React.useState(true);
   const[error, setError]= React.useState(false);
 
@@ -28,7 +27,7 @@ function useLocalStorage(itemName, initialValue){
         setError(true);
       }
     }, 2000);
-  },[initialValue, itemName]);
+  },[]);
   
   
   const saveItem = (newItems) => {// modifica el localStorage y el estado
@@ -36,7 +35,8 @@ function useLocalStorage(itemName, initialValue){
     setItem(newItems)
   }
   
-  return {items, saveItem, loading, error}
+  
+  return {item, saveItem, loading, error}
 }
 
 export {useLocalStorage}
