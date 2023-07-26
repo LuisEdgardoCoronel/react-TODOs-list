@@ -64,8 +64,25 @@ function TodoProvider({children}){
     setOpenModal(!openModal)
   }
 
+  const [newTodoValue, setNewTodoValue] = React.useState('');
 
+  
+  
 
+  const onSubmit = (event)=>{
+    event.preventDefault();
+    addTodo(newTodoValue)
+    setOpenModal(false);
+  }
+
+  const onChange = (event)=>{
+    setNewTodoValue(event.target.value)
+  }
+
+  const addNewTodo = () =>{
+    addTodo(newTodoValue)
+    setNewTodoValue('')
+  }
 
   return(
     <TodoContext.Provider value={{
@@ -82,6 +99,11 @@ function TodoProvider({children}){
       setOpenModal, 
       modalView,
       addTodo,
+      newTodoValue,
+      setNewTodoValue,
+      onChange,
+      onSubmit,
+      addNewTodo
     }}>
       {children}
     </TodoContext.Provider>
