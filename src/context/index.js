@@ -6,22 +6,23 @@ const TodoContext = React.createContext();
 function TodoProvider({children}){
 
   const {
-    items:todos, 
+    item, 
     saveItem:saveTodos, 
     loading, 
     error
   } = useLocalStorage('TODOS_v1',[]);//contiene todos los todos
 
 
-  const[openModal, setOpenModal] = React.useState(true);//contiene el estado del modal
+  const[openModal, setOpenModal] = React.useState(false);//contiene el estado del modal
   const [inputState, setInputState] = React.useState('');//contiene el texto de los inputs
 
 
-  const completedTodos = todos.filter(todo => !!todo.completed).length;
-  const totalTodos = todos.length;
+  const completedTodos = item.filter(todo => !!todo.completed).length;
+  const totalTodos = item.length;
 
-  const searchedTodos = todos.filter(
+  const searchedTodos = item.filter(
     (todo) => {
+      console.log(todo.text);
       const todoText = todo.text.toLowerCase();
       const searchText = inputState.toLowerCase();
       return todoText.includes(searchText)
@@ -31,7 +32,7 @@ function TodoProvider({children}){
 
 
   const completeTodo = (text) =>{//actualizador de todos a true
-    const newTodos = [...todos]
+    const newTodos = [...item]
     const todoIndex = newTodos.findIndex(
       (todo)=> todo.text === text
     );
@@ -41,13 +42,30 @@ function TodoProvider({children}){
 
 
   const deleteTodo = (text) =>{//borrar todos
-    const newTodos = [...todos]
+    const newTodos = [...item]
     const todoIndex = newTodos.findIndex(
       (todo)=> todo.text === text
     );
     newTodos.splice(todoIndex,1);
     saveTodos(newTodos)
   };
+
+
+  const addTodo = (text) => {
+    const newTodos = [...item]
+    newTodos.push({
+      text,
+    completed:false,
+  })
+    saveTodos(newTodos);
+  }
+
+  const modalView = () =>{
+    setOpenModal(!openModal)
+  }
+
+
+
 
   return(
     <TodoContext.Provider value={{
@@ -61,7 +79,9 @@ function TodoProvider({children}){
       loading,
       error,
       openModal,
-      setOpenModal
+      setOpenModal, 
+      modalView,
+      addTodo,
     }}>
       {children}
     </TodoContext.Provider>
