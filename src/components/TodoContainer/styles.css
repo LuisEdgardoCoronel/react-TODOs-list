@@ -2,5 +2,7 @@
     display: flex;
     justify-content: space-around;
     height: 100vh;
-    background-color: rgb(255, 207, 158);
+    /* background-color: rgb(255, 207, 158); */
+    background: rgb(216,159,100);
+    background: radial-gradient(circle, rgba(216,159,100,1) 0%, rgba(255,207,158,1) 40%, rgba(216,159,100,1) 100%);
 }
