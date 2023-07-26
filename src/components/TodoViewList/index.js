@@ -9,6 +9,8 @@ import TodoModal from '../TodoModal/TodoModal'
 import pensando from '../../img/pensando.svg'
 import ReactLoading from 'react-loading';
 import { TodoContext } from '../../context'
+import TodoCreateForm from '../TodoCreateForm/index'
+import TodoListImg from '../TodoListImg'
 
 
 
@@ -21,25 +23,28 @@ function TodoViewList() {
     loading,
     error,
     openModal,
-    setOpenModal
+    modalView
   } = React.useContext(TodoContext)
 
   return (
     <div className='view-list-container'>
       <img src={pensando} alt="chica pensando" className='icon-pensando'/>
         <TodoTitle/>
-          {openModal && (<TodoModal>
-            
-          </TodoModal>)}
+          {openModal && 
+          (<TodoModal>
+            <TodoCreateForm />
+          </TodoModal>)
+          }
           <TodoInput  placeholder={"Buscar tareas"}/>
           <TodoList>
             {loading && 
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '200px' }}>
+            (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '200px' }}>
               <ReactLoading type='spokes' />
-            </div>}
+            </div>)}
             {error && <p>Hubo un error</p>}
-            {(!loading && searchedTodos.length === 0) && <p>Crea tu primer todo!</p>}
-            {searchedTodos.map(todo => (
+            {(!loading && searchedTodos.length === 0) && <TodoListImg/>}
+            {console.log("hola hola: "+searchedTodos.length)}
+            {searchedTodos?.map(todo => (
               <TodoItem
               key={todo.text}
               text={todo.text}
@@ -49,7 +54,10 @@ function TodoViewList() {
               ))}
           </TodoList>
 
-        <TodoBtnCreate text={"Nuevo"}/>
+        <TodoBtnCreate 
+        functions={()=>{ modalView();}} 
+        text={"Nuevo"}
+        />
     </div>
   )
 }
