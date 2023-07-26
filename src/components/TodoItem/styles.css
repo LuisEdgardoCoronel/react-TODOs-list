@@ -5,6 +5,7 @@ li{
     margin: 5px;
     border-radius: 7px;
     padding: 0 10px;
+    box-sizing: border-box;
 }
 
 li span{
@@ -15,8 +16,7 @@ li span{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 15px;
-    font-weight: 900;
+    font-size: 16px;
 }
 
 
@@ -24,12 +24,17 @@ li span:hover{
     scale: 1.4;
 }
 
+li p{
+    font-size: 16px;
+    font-weight: bold;
+    
+}
 .active{
-    background-color: green;
+    background-color: rgb(176, 255, 176);
 }
 
 .false{
-    background-color: rgb(199, 0, 0);
+    background-color: #ff6d6d;
 }
 
 .through{
