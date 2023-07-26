@@ -1,17 +1,28 @@
 import React from 'react'
 import './styles.css'
-import TodoSearch from '../TodoInput'
 import TodoBtnCreate from '../TodoBtnCreate'
 import icontodo from '../../img/icon.svg'
+import { TodoContext } from '../../context'
 
 
 
 function TodoCreateDesktop() {
+  const {
+    newTodoValue,
+    onChange,
+    addNewTodo
+  } = React.useContext(TodoContext)
   return (
     <div className='container-desktop'>
       <h2>Ingrese una nueva tarea</h2>  
-      <textarea></textarea>
-      <TodoBtnCreate text={"Crear"}/>
+      <textarea
+      value={newTodoValue}
+      onChange={onChange}></textarea>
+      <TodoBtnCreate
+      functions={()=>{
+        addNewTodo()
+      }}
+       text={"Crear"}/>
       <img src={icontodo} alt="imagen simbolica"/>
     </div>
   )
