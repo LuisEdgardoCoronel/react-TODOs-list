@@ -3,7 +3,7 @@ import './styles.css'
 import { TodoContext } from '../../context';
 
 function TodoTitle() {
-  const {completed,total}=React.useContext(TodoContext)
+  const {completedTodos:completed,totalTodos:total}=React.useContext(TodoContext)
 
   return (
     <h1>
