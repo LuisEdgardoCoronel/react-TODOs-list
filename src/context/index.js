@@ -29,7 +29,6 @@ function TodoProvider({children}){//inicializamos la funcion que va almacenar to
 
   const searchedTodos = item.filter(//filtramos los todosItems en el todolist en caso de que escribamos en el input
     (todo) => {
-      console.log(todo.text);
       const todoText = todo.text.toLowerCase();
       const searchText = inputState.toLowerCase();
       return todoText.includes(searchText)

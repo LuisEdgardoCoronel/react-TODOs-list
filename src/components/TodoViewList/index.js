@@ -43,7 +43,6 @@ function TodoViewList() {
             </div>)}
             {error && <p>Hubo un error</p>}
             {(!loading && searchedTodos.length === 0) && <TodoListImg/>}
-            {console.log("hola hola: "+searchedTodos.length)}
             {searchedTodos?.map(todo => (
               <TodoItem
               key={todo.text}
