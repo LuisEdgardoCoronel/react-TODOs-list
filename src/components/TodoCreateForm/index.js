@@ -7,20 +7,11 @@ import { TodoContext } from '../../context'
 function TodoCreateForm() {
   const {
     setOpenModal,
-    addTodo
+    newTodoValue,
+    onSubmit,
+    onChange
   } = React.useContext(TodoContext)
 
-  const [newTodoValue, setNewTodoValue] = React.useState('');
-
-  const onSubmit = (event)=>{
-    event.preventDefault();
-    addTodo(newTodoValue)
-    setOpenModal(false);
-  }
-
-  const onChange = (event)=>{
-    setNewTodoValue(event.target.value)
-  }
 
   return (
     <form onSubmit={onSubmit} className='modal-container'>
@@ -35,9 +26,6 @@ function TodoCreateForm() {
           setOpenModal(false);
         }}>Cerrar</button>
         <TodoBtnCreate 
-        functions={()=>{
-          
-        }}
         text={"Crear"}
         />
       </div>
