@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/LuisEdgardoCoronel/react-TODOs-list/static/css/main.07571107.css",
-    "main.js": "/LuisEdgardoCoronel/react-TODOs-list/static/js/main.f7d33e76.js",
+    "main.js": "/LuisEdgardoCoronel/react-TODOs-list/static/js/main.834c0b15.js",
     "static/media/icon.svg": "/LuisEdgardoCoronel/react-TODOs-list/static/media/icon.757fe3d583c84f9b75910cee68604b18.svg",
     "static/media/img-list.svg": "/LuisEdgardoCoronel/react-TODOs-list/static/media/img-list.0fdec140de7d2bba7800f4536e7672d3.svg",
     "static/media/pensando.svg": "/LuisEdgardoCoronel/react-TODOs-list/static/media/pensando.404f57e93ff08f89811104f6b6117c13.svg",
     "index.html": "/LuisEdgardoCoronel/react-TODOs-list/index.html",
     "main.07571107.css.map": "/LuisEdgardoCoronel/react-TODOs-list/static/css/main.07571107.css.map",
-    "main.f7d33e76.js.map": "/LuisEdgardoCoronel/react-TODOs-list/static/js/main.f7d33e76.js.map"
+    "main.834c0b15.js.map": "/LuisEdgardoCoronel/react-TODOs-list/static/js/main.834c0b15.js.map"
   },
   "entrypoints": [
     "static/css/main.07571107.css",
-    "static/js/main.f7d33e76.js"
+    "static/js/main.834c0b15.js"
   ]
 }
